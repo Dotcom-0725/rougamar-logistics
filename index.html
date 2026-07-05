@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Logistique — خدمات لوجستية في طنجة</title>
+  <meta name="description" content="Service Logistique — نقل، تخزين وتوصيل البضائع في طنجة وجميع أنحاء المغرب. اطلب عرض سعر مجاني عبر واتساب.">
+
+  <!-- ============================================================
+       META PIXEL — À ACTIVER PLUS TARD
+       1) Décommenter le bloc  2) Remplacer VOTRE_PIXEL_ID (2 endroits)
+       ============================================================
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'VOTRE_PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=VOTRE_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+  ============================================================ -->
+
+  <!-- SEO : Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Service Logistique",
+    "description": "Services logistiques à Tanger : transport, stockage, livraison et gestion de la chaîne d'approvisionnement.",
+    "founder": { "@type": "Person", "name": "Rouga Kamal" },
+    "telephone": "+212638792780",
+    "email": "rougakamal@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Tanger", "addressCountry": "MA" },
+    "areaServed": ["Tanger", "Maroc"],
+    "knowsLanguage": ["ar", "fr"],
+    "priceRange": "$$"
+  }
+  </script>
+
+  <!-- Marqueur "js" : animations activées seulement si le JS fonctionne -->
+  <script>document.documentElement.classList.add("js");</script>
+
+  <!-- Police : Tajawal (arabe + latin, look moderne) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==================== VARIABLES ==================== */
+    :root{
+      --navy:#0A2540;
+      --gold:#F0A63C;
+      --gold-soft:#fdf3e3;
+      --ink:#1a2b3c;
+      --muted:#66788c;
+      --bg:#ffffff;
+      --soft:#f6f8fb;
+      --line:#e8edf3;
+      --wa:#25D366;
+      --r:18px;
+      --shadow:0 12px 40px rgba(10,37,64,.10);
+    }
+
+    /* ==================== BASE ==================== */
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Tajawal',sans-serif;color:var(--ink);background:var(--bg);
+      line-height:1.8;text-align:start;overflow-x:hidden;
+    }
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    ul{list-style:none}
+    .container{width:min(1080px,90%);margin-inline:auto}
+    section{padding-block:72px}
+    @media(min-width:768px){section{padding-block:110px}}
+
+    .label{
+      display:inline-block;color:var(--gold);font-weight:800;font-size:.85rem;
+      letter-spacing:.5px;margin-bottom:10px;
+    }
+    .title{font-size:1.7rem;font-weight:800;color:var(--navy);line-height:1.4;margin-bottom:12px}
+    .sub{color:var(--muted);max-width:520px;font-size:1rem}
+    .center{text-align:center}
+    .center .sub{margin-inline:auto}
+    @media(min-width:768px){.title{font-size:2.3rem}}
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:14px 30px;border-radius:999px;font-weight:800;font-size:1rem;
+      border:none;cursor:pointer;font-family:inherit;transition:transform .15s,box-shadow .15s;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-gold{background:var(--gold);color:var(--navy)}
+    .btn-gold:hover{box-shadow:0 10px 25px rgba(240,166,60,.4)}
+    .btn-wa{background:var(--wa);color:#fff}
+    .btn-wa:hover{box-shadow:0 10px 25px rgba(37,211,102,.4)}
+    .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+    .btn-ghost:hover{background:rgba(255,255,255,.22)}
+
+    /* Apparition douce (seulement si JS actif) */
+    html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+    html.js .reveal.visible{opacity:1;transform:none}
+
+    /* ==================== HEADER ==================== */
+    header{
+      position:fixed;top:0;inset-inline:0;z-index:100;
+      transition:background .25s,box-shadow .25s;
+    }
+    header.solid{background:var(--navy);box-shadow:0 4px 24px rgba(0,0,0,.18)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+    .logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:1.1rem}
+    .logo-ico{
+      width:38px;height:38px;border-radius:11px;background:var(--gold);
+      display:grid;place-items:center;flex-shrink:0;
+    }
+    nav.desktop{display:none;gap:28px}
+    nav.desktop a{color:rgba(255,255,255,.85);font-weight:500;font-size:.95rem;transition:color .15s}
+    nav.desktop a:hover{color:var(--gold)}
+    .nav-side{display:flex;align-items:center;gap:10px}
+    .lang-btn{
+      background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4);
+      border-radius:999px;padding:5px 16px;font-weight:700;cursor:pointer;
+      font-family:inherit;font-size:.88rem;transition:.15s;
+    }
+    .lang-btn:hover{border-color:var(--gold);color:var(--gold)}
+    .burger{background:none;border:none;cursor:pointer;padding:8px;display:grid;gap:5px}
+    .burger span{width:23px;height:2.5px;background:#fff;border-radius:2px;transition:.25s}
+    .burger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+    .burger.open span:nth-child(2){opacity:0}
+    .burger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+    @media(min-width:920px){nav.desktop{display:flex}.burger{display:none}}
+    .m-menu{
+      position:fixed;top:70px;inset-inline:0;background:var(--navy);z-index:99;
+      display:grid;padding:14px 6% 22px;transform:translateY(-130%);
+      transition:transform .3s ease;
+    }
+    .m-menu.open{transform:none}
+    .m-menu a{color:#e8eef5;font-weight:700;padding:12px 4px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .m-menu a:last-child{border:none}
+
+    /* ==================== HERO ==================== */
+    .hero{
+      min-height:100svh;display:flex;align-items:center;color:#fff;
+      padding-block:130px 90px;position:relative;
+      background:
+        linear-gradient(to top,rgba(7,25,45,.92) 0%,rgba(7,25,45,.55) 55%,rgba(7,25,45,.65) 100%),
+        url("https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1600&q=70")
+        center/cover no-repeat;
+    }
+    .hero-box{max-width:640px}
+    .hero .label{color:var(--gold)}
+    .hero h1{font-size:2rem;font-weight:800;line-height:1.45;margin-bottom:18px}
+    .hero p{color:rgba(255,255,255,.85);font-size:1.05rem;max-width:520px;margin-bottom:32px}
+    .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:44px}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+      backdrop-filter:blur(4px);padding:8px 16px;border-radius:999px;
+      font-size:.86rem;font-weight:500;color:rgba(255,255,255,.92);
+    }
+    .chip svg{color:var(--gold)}
+    @media(min-width:768px){.hero h1{font-size:3rem}}
+
+    /* ==================== À PROPOS ==================== */
+    .about-grid{display:grid;gap:44px;align-items:center}
+    @media(min-width:900px){.about-grid{grid-template-columns:1fr 1fr;gap:70px}}
+    .about-img img{border-radius:var(--r);box-shadow:var(--shadow);aspect-ratio:4/4.6;object-fit:cover;width:100%}
+    .about-text p{color:var(--muted);margin-bottom:22px}
+    .ticks{display:grid;gap:13px;margin-bottom:30px}
+    .ticks li{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--navy)}
+    .tick{
+      width:26px;height:26px;border-radius:50%;background:var(--gold-soft);
+      display:grid;place-items:center;color:var(--gold);flex-shrink:0;
+    }
+
+    /* ==================== SERVICES ==================== */
+    .soft{background:var(--soft)}
+    .cards{display:grid;gap:22px;margin-top:44px}
+    @media(min-width:640px){.cards{grid-template-columns:1fr 1fr}}
+    @media(min-width:1000px){.cards{grid-template-columns:repeat(3,1fr)}}
+    .card{
+      background:#fff;border-radius:var(--r);overflow:hidden;
+      box-shadow:0 4px 18px rgba(10,37,64,.05);
+      transition:transform .25s,box-shadow .25s;
+    }
+    .card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .card-img{height:180px;overflow:hidden}
+    .card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .card:hover .card-img img{transform:scale(1.06)}
+    .card-body{padding:22px 24px 26px}
+    .card-body h3{color:var(--navy);font-size:1.1rem;margin-bottom:6px}
+    .card-body p{color:var(--muted);font-size:.93rem}
+
+    /* ==================== PACKS ==================== */
+    .packs{display:grid;gap:22px;margin-top:44px}
+    @media(min-width:900px){.packs{grid-template-columns:repeat(3,1fr)}}
+    .pack{
+      background:#fff;border:1.5px solid var(--line);border-radius:var(--r);
+      padding:34px 28px;display:flex;flex-direction:column;position:relative;
+      transition:transform .25s,box-shadow .25s;
+    }
+    .pack:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .pack.hot{background:var(--navy);border-color:var(--navy);color:#fff}
+    .hot-tag{
+      position:absolute;top:-14px;inset-inline-start:28px;
+      background:var(--gold);color:var(--navy);font-weight:800;font-size:.78rem;
+      padding:4px 16px;border-radius:999px;
+    }
+    .pack h3{font-size:1.25rem;color:var(--navy);margin-bottom:4px}
+    .pack.hot h3{color:#fff}
+    .pack-for{font-size:.88rem;color:var(--muted);margin-bottom:22px}
+    .pack.hot .pack-for{color:rgba(255,255,255,.65)}
+    .pack ul{display:grid;gap:12px;margin-bottom:28px;flex-grow:1}
+    .pack li{display:flex;gap:10px;align-items:flex-start;font-size:.94rem}
+    .pack li svg{color:var(--gold);flex-shrink:0;margin-top:6px}
+    .pack .btn{width:100%}
+    .pack.hot .btn{background:var(--gold);color:var(--navy)}
+
+    /* ==================== BLOG ==================== */
+    .post-date{font-size:.78rem;color:var(--gold);font-weight:800;margin-bottom:6px;display:block}
+    .card-body h3.post-t{font-size:1rem;line-height:1.55}
+
+    /* ==================== FAQ ==================== */
+    .faq{max-width:720px;margin:44px auto 0;display:grid;gap:12px}
+    .faq-item{background:#fff;border:1.5px solid var(--line);border-radius:14px;overflow:hidden}
+    .faq-q{
+      width:100%;background:none;border:none;cursor:pointer;font-family:inherit;
+      display:flex;justify-content:space-between;align-items:center;gap:14px;
+      padding:18px 22px;font-size:.98rem;font-weight:700;color:var(--navy);text-align:start;
+    }
+    .faq-q svg{flex-shrink:0;transition:transform .25s;color:var(--gold)}
+    .faq-item.open .faq-q svg{transform:rotate(180deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+    .faq-a p{padding:0 22px 20px;color:var(--muted);font-size:.93rem}
+
+    /* ==================== CONTACT ==================== */
+    .contact-grid{display:grid;gap:40px;margin-top:44px}
+    @media(min-width:900px){.contact-grid{grid-template-columns:1fr 1.1fr;gap:60px}}
+    .c-info{display:grid;gap:12px;margin-bottom:24px}
+    .c-row{display:flex;align-items:center;gap:14px}
+    .c-ico{
+      width:46px;height:46px;border-radius:13px;background:var(--gold-soft);
+      display:grid;place-items:center;color:var(--gold);flex-shrink:0;
+    }
+    .c-row b{display:block;font-size:.8rem;color:var(--muted);font-weight:500}
+    .c-row span{font-weight:800;color:var(--navy);direction:ltr;unicode-bidi:embed}
+    .map{border-radius:var(--r);overflow:hidden;height:250px;box-shadow:var(--shadow)}
+    .map iframe{width:100%;height:100%;border:0}
+    .form{
+      background:#fff;border-radius:var(--r);padding:32px 28px;box-shadow:var(--shadow);
+    }
+    .form h3{color:var(--navy);margin-bottom:4px}
+    .form-hint{color:var(--muted);font-size:.86rem;margin-bottom:22px}
+    .field{margin-bottom:16px}
+    .field label{display:block;font-weight:700;font-size:.87rem;color:var(--navy);margin-bottom:6px}
+    .field input,.field select,.field textarea{
+      width:100%;border:1.5px solid var(--line);border-radius:11px;
+      padding:13px 15px;font-family:inherit;font-size:.95rem;color:var(--ink);
+      background:var(--soft);transition:border-color .15s;
+    }
+    .field input:focus,.field select:focus,.field textarea:focus{
+      outline:none;border-color:var(--gold);background:#fff;
+    }
+    .field textarea{resize:vertical;min-height:96px}
+
+    /* ==================== FOOTER ==================== */
+    footer{background:var(--navy);color:rgba(255,255,255,.6);padding:44px 0 96px;text-align:center}
+    footer .logo{justify-content:center;margin-bottom:14px}
+    footer p{font-size:.9rem;max-width:420px;margin:0 auto 22px}
+    .f-links{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;margin-bottom:26px}
+    .f-links a{font-size:.9rem;transition:color .15s}
+    .f-links a:hover{color:var(--gold)}
+    .f-bottom{font-size:.82rem;border-top:1px solid rgba(255,255,255,.1);padding-top:20px}
+    .f-bottom span{direction:ltr;unicode-bidi:embed}
+
+    /* ==================== WHATSAPP FLOTTANT ==================== */
+    .wa-float{
+      position:fixed;bottom:22px;inset-inline-end:22px;z-index:90;
+      width:58px;height:58px;border-radius:50%;background:var(--wa);
+      display:grid;place-items:center;color:#fff;
+      box-shadow:0 8px 25px rgba(37,211,102,.45);transition:transform .2s;
+      animation:pulse 2.6s infinite;
+    }
+    .wa-float:hover{transform:scale(1.1)}
+    @keyframes pulse{
+      0%,100%{box-shadow:0 8px 25px rgba(37,211,102,.45),0 0 0 0 rgba(37,211,102,.35)}
+      50%{box-shadow:0 8px 25px rgba(37,211,102,.45),0 0 0 14px rgba(37,211,102,0)}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header id="header">
+    <div class="container nav">
+      <a href="#hero" class="logo">
+        <span class="logo-ico">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#0A2540" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="13" height="10" rx="1"/><path d="M14 9h4l3 3v4h-7"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+        </span>
+        Service Logistique
+      </a>
+      <nav class="desktop">
+        <a href="#about" data-i18n="nav.about">من نحن</a>
+        <a href="#services" data-i18n="nav.services">خدماتنا</a>
+        <a href="#packs" data-i18n="nav.packs">الباقات</a>
+        <a href="#blog" data-i18n="nav.blog">المدونة</a>
+        <a href="#faq" data-i18n="nav.faq">الأسئلة الشائعة</a>
+        <a href="#contact" data-i18n="nav.contact">اتصل بنا</a>
+      </nav>
+      <div class="nav-side">
+        <button class="lang-btn" id="langBtn" onclick="toggleLang()">FR</button>
+        <button class="burger" id="burger" aria-label="Menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="m-menu" id="mMenu">
+      <a href="#about" data-i18n="nav.about">من نحن</a>
+      <a href="#services" data-i18n="nav.services">خدماتنا</a>
+      <a href="#packs" data-i18n="nav.packs">الباقات</a>
+      <a href="#blog" data-i18n="nav.blog">المدونة</a>
+      <a href="#faq" data-i18n="nav.faq">الأسئلة الشائعة</a>
+      <a href="#contact" data-i18n="nav.contact">اتصل بنا</a>
+    </div>
+  </header>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-box">
+        <span class="label" data-i18n="hero.label">خدمات لوجستية — طنجة، المغرب</span>
+        <h1 data-i18n="hero.title">ننقل بضائعك بأمان، وفي الوقت المحدد.</h1>
+        <p data-i18n="hero.sub">نقل، تخزين وتوصيل للشركات والأفراد في طنجة وجميع المدن المغربية — بأسعار واضحة ومتابعة شخصية لكل شحنة.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-wa js-wa" href="#" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29z"/></svg>
+            <span data-i18n="hero.cta1">اطلب عرض سعر مجاني</span>
+          </a>
+          <a class="btn btn-ghost" href="tel:+212638792780"><span data-i18n="hero.cta2">اتصل بنا</span></a>
+        </div>
+        <div class="hero-chips">
+          <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.c1">استجابة سريعة</span></span>
+          <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.c2">أسعار شفافة</span></span>
+          <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.c3">تغطية وطنية</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== À PROPOS ==================== -->
+  <section id="about">
+    <div class="container about-grid">
+      <div class="about-img reveal">
+        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=70" alt="Logistique — entrepôt" loading="lazy">
+      </div>
+      <div class="about-text reveal">
+        <span class="label" data-i18n="about.label">من نحن</span>
+        <h2 class="title" data-i18n="about.title">الجدية والالتزام قبل كل شيء</h2>
+        <p data-i18n="about.p1">Service Logistique مشروع مغربي انطلق من طنجة بهدف واحد: تقديم خدمة لوجستية يمكنك الاعتماد عليها فعلًا — بدون تأخير، بدون مفاجآت في الأسعار، وبتواصل مباشر ومحترم.</p>
+        <ul class="ticks">
+          <li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="about.t1">التزام تام بمواعيد التسليم</span></li>
+          <li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="about.t2">تعامل آمن وحذر مع بضائعك</span></li>
+          <li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="about.t3">عرض سعر واضح قبل أي التزام</span></li>
+        </ul>
+        <a class="btn btn-gold js-wa" href="#" target="_blank" rel="noopener"><span data-i18n="about.cta">تواصل معنا الآن</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SERVICES ==================== -->
+  <section id="services" class="soft">
+    <div class="container">
+      <div class="center reveal">
+        <span class="label" data-i18n="services.label">خدماتنا</span>
+        <h2 class="title" data-i18n="services.title">كل ما تحتاجه في مكان واحد</h2>
+        <p class="sub" data-i18n="services.sub">من طرد صغير إلى سلسلة إمداد كاملة.</p>
+      </div>
+      <div class="cards">
+        <div class="card reveal">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=800&q=70" alt="Transport de marchandises" loading="lazy"></div>
+          <div class="card-body">
+            <h3 data-i18n="services.s1t">نقل البضائع</h3>
+            <p data-i18n="services.s1d">نقل آمن داخل طنجة وإلى جميع المدن المغربية.</p>
+          </div>
+        </div>
+        <div class="card reveal">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=70" alt="Stockage" loading="lazy"></div>
+          <div class="card-body">
+            <h3 data-i18n="services.s2t">التخزين</h3>
+            <p data-i18n="services.s2d">مساحات آمنة ومنظمة لفترات قصيرة أو طويلة.</p>
+          </div>
+        </div>
+        <div class="card reveal">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=800&q=70" alt="Livraison" loading="lazy"></div>
+          <div class="card-body">
+            <h3 data-i18n="services.s3t">التوصيل السريع</h3>
+            <p data-i18n="services.s3d">توصيل في نفس اليوم داخل طنجة، مع الدفع عند الاستلام.</p>
+          </div>
+        </div>
+        <div class="card reveal">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=70" alt="Supply chain" loading="lazy"></div>
+          <div class="card-body">
+            <h3 data-i18n="services.s4t">إدارة سلسلة الإمداد</h3>
+            <p data-i18n="services.s4d">تنسيق كامل لتدفق بضائعك من المورد إلى العميل.</p>
+          </div>
+        </div>
+        <div class="card reveal">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=800&q=70" alt="E-commerce" loading="lazy"></div>
+          <div class="card-body">
+            <h3 data-i18n="services.s5t">لوجستيك التجارة الإلكترونية</h3>
+            <p data-i18n="services.s5d">استلام، تغليف وتوصيل طلبات متجرك الإلكتروني.</p>
+          </div>
+        </div>
+        <div class="card reveal">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?auto=format&fit=crop&w=800&q=70" alt="Transport interurbain" loading="lazy"></div>
+          <div class="card-body">
+            <h3 data-i18n="services.s6t">الشحن بين المدن</h3>
+            <p data-i18n="services.s6d">رحلات منتظمة نحو الدار البيضاء، الرباط، فاس ومراكش.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PACKS ==================== -->
+  <section id="packs">
+    <div class="container">
+      <div class="center reveal">
+        <span class="label" data-i18n="packs.label">الباقات</span>
+        <h2 class="title" data-i18n="packs.title">اختر ما يناسبك</h2>
+        <p class="sub" data-i18n="packs.sub">السعر النهائي يُحدد حسب حجم شحنتك ووجهتها — عرض السعر مجاني.</p>
+      </div>
+      <div class="packs">
+        <div class="pack reveal">
+          <h3 data-i18n="packs.p1n">باقة الانطلاق</h3>
+          <p class="pack-for" data-i18n="packs.p1f">للأفراد والطلبات الفردية</p>
+          <ul>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="packs.p1i1">نقل من نقطة إلى نقطة</span></li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="packs.p1i2">توصيل داخل طنجة وضواحيها</span></li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="packs.p1i3">دفع مرن</span></li>
+          </ul>
+          <a class="btn btn-gold js-wa-pack" data-pack="Pack Démarrage" href="#" target="_blank" rel="noopener"><span data-i18n="packs.cta">اطلب عرض سعر</span></a>
+        </div>
+        <div class="pack hot reveal">
+          <span class="hot-tag" data-i18n="packs.hot">الأكثر طلبًا</span>
+          <h3 data-i18n="packs.p2n">باقة الأعمال</h3>
+          <p class="pack-for" data-i18n="packs.p2f">للمتاجر والشركات الصغيرة</p>
+          <ul>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="packs.p2i1">شحنات منتظمة بجدول أسبوعي</span></li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="packs.p2i2">توصيل مع الدفع عند الاستلام</span></li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="packs.p2i3">أولوية في الجدولة والرد</span></li>
+          </ul>
+          <a class="btn js-wa-pack" data-pack="Pack Business" href="#" target="_blank" rel="noopener"><span data-i18n="packs.cta">اطلب عرض سعر</span></a>
+        </div>
+        <div class="pack reveal">
+          <h3 data-i18n="packs.p3n">باقة مخصصة</h3>
+          <p class="pack-for" data-i18n="packs.p3f">للشركات ذات الاحتياجات الخاصة</p>
+          <ul>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="packs.p3i1">حل متكامل لسلسلة الإمداد</span></li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="packs.p3i2">عقود شهرية أو سنوية</span></li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="packs.p3i3">تسعير تفضيلي حسب الحجم</span></li>
+          </ul>
+          <a class="btn btn-gold js-wa-pack" data-pack="Pack Sur Mesure" href="#" target="_blank" rel="noopener"><span data-i18n="packs.cta">اطلب عرض سعر</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BLOG ==================== -->
+  <section id="blog" class="soft">
+    <div class="container">
+      <div class="center reveal">
+        <span class="label" data-i18n="blog.label">المدونة</span>
+        <h2 class="title" data-i18n="blog.title">نصائح ومقالات</h2>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1560264280-88b68371db39?auto=format&fit=crop&w=800&q=70" alt="Partenaire logistique" loading="lazy"></div>
+          <div class="card-body">
+            <span class="post-date" data-i18n="blog.b1d">يوليوز 2026</span>
+            <h3 class="post-t" data-i18n="blog.b1t">5 معايير لاختيار شريك لوجستي موثوق</h3>
+            <p data-i18n="blog.b1x">أسئلة يجب طرحها قبل تسليم بضاعتك لأي جهة…</p>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=70" alt="Stockage e-commerce" loading="lazy"></div>
+          <div class="card-body">
+            <span class="post-date" data-i18n="blog.b2d">يونيو 2026</span>
+            <h3 class="post-t" data-i18n="blog.b2t">كيف يقلل التخزين الذكي تكاليف متجرك؟</h3>
+            <p data-i18n="blog.b2x">التخزين المنظم يوفر لك المال والوقت…</p>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=800&q=70" alt="Port de Tanger" loading="lazy"></div>
+          <div class="card-body">
+            <span class="post-date" data-i18n="blog.b3d">ماي 2026</span>
+            <h3 class="post-t" data-i18n="blog.b3t">طنجة: بوابة لوجستية بين إفريقيا وأوروبا</h3>
+            <p data-i18n="blog.b3x">ماذا يعني ميناء طنجة المتوسط لنشاطك التجاري؟…</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ==================== -->
+  <section id="faq">
+    <div class="container">
+      <div class="center reveal">
+        <span class="label" data-i18n="faq.label">الأسئلة الشائعة</span>
+        <h2 class="title" data-i18n="faq.title">أسئلة يطرحها عملاؤنا</h2>
+      </div>
+      <div class="faq reveal">
+        <div class="faq-item">
+          <button class="faq-q"><span data-i18n="faq.q1">ما هي المناطق التي تغطونها؟</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="faq-a"><p data-i18n="faq.a1">طنجة وضواحيها يوميًا، مع رحلات منتظمة نحو الدار البيضاء، الرباط، فاس، مراكش وأكادير. للوجهات الأخرى راسلنا للتأكيد.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span data-i18n="faq.q2">كيف أطلب الخدمة؟</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="faq-a"><p data-i18n="faq.a2">راسلنا على واتساب بنوع البضاعة وحجمها ووجهتها، ونرسل لك عرض سعر واضحًا. بعد موافقتك نحدد الموعد وننفذ.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span data-i18n="faq.q3">كم تستغرق عملية التوصيل؟</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="faq-a"><p data-i18n="faq.a3">داخل طنجة: نفس اليوم غالبًا. بين المدن: من 24 إلى 72 ساعة حسب الوجهة. المدة الدقيقة تُؤكد في عرض السعر.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span data-i18n="faq.q4">كيف تُحدد الأسعار؟</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="faq-a"><p data-i18n="faq.a4">حسب حجم ووزن البضاعة والمسافة ونوع الخدمة. عرض السعر مجاني وغير ملزم.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span data-i18n="faq.q5">هل بضاعتي آمنة؟</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="faq-a"><p data-i18n="faq.a5">نعم: تغليف مناسب، تحميل حذر، وتخزين آمن — ونبقيك على اطلاع في كل مرحلة. يمكن ترتيب تأمين إضافي للشحنات الثمينة.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section id="contact" class="soft">
+    <div class="container">
+      <div class="center reveal">
+        <span class="label" data-i18n="contact.label">اتصل بنا</span>
+        <h2 class="title" data-i18n="contact.title">لنبدأ العمل معًا</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="reveal">
+          <div class="c-info">
+            <div class="c-row">
+              <span class="c-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+              <div><b data-i18n="contact.phone">الهاتف / واتساب</b><span>06 38 79 27 80</span></div>
+            </div>
+            <div class="c-row">
+              <span class="c-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+              <div><b data-i18n="contact.email">البريد الإلكتروني</b><span>rougakamal@gmail.com</span></div>
+            </div>
+            <div class="c-row">
+              <span class="c-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <div><b data-i18n="contact.city">المدينة</b><span data-i18n="contact.cityV">طنجة، المغرب</span></div>
+            </div>
+          </div>
+          <!-- Carte de Tanger -->
+          <div class="map">
+            <iframe src="https://maps.google.com/maps?q=Tanger,+Maroc&t=&z=12&ie=UTF8&iwloc=&output=embed" loading="lazy" title="Tanger, Maroc"></iframe>
+          </div>
+        </div>
+        <!-- Formulaire -> WhatsApp (aucun backend nécessaire) -->
+        <div class="form reveal">
+          <h3 data-i18n="contact.fT">أرسل طلبك</h3>
+          <p class="form-hint" data-i18n="contact.fH">سيُفتح واتساب برسالة جاهزة تحتوي معلوماتك.</p>
+          <form id="contactForm">
+            <div class="field">
+              <label for="fName" data-i18n="contact.fName">الاسم الكامل</label>
+              <input type="text" id="fName" required>
+            </div>
+            <div class="field">
+              <label for="fPhone" data-i18n="contact.fPhone">رقم الهاتف</label>
+              <input type="tel" id="fPhone" required placeholder="06XXXXXXXX" style="direction:ltr;text-align:start">
+            </div>
+            <div class="field">
+              <label for="fService" data-i18n="contact.fService">الخدمة المطلوبة</label>
+              <select id="fService">
+                <option value="" data-i18n="contact.o0">— اختر —</option>
+                <option data-i18n="contact.o1">نقل البضائع</option>
+                <option data-i18n="contact.o2">التخزين</option>
+                <option data-i18n="contact.o3">التوصيل السريع</option>
+                <option data-i18n="contact.o4">إدارة سلسلة الإمداد</option>
+                <option data-i18n="contact.o5">خدمة أخرى</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="fMsg" data-i18n="contact.fMsg">تفاصيل طلبك</label>
+              <textarea id="fMsg"></textarea>
+            </div>
+            <button type="submit" class="btn btn-wa" style="width:100%"><span data-i18n="contact.send">إرسال عبر واتساب</span></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container">
+      <a href="#hero" class="logo">
+        <span class="logo-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#0A2540" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="13" height="10" rx="1"/><path d="M14 9h4l3 3v4h-7"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></span>
+        Service Logistique
+      </a>
+      <p data-i18n="footer.tag">نقل، تخزين وتوصيل — بجدية والتزام، من طنجة إلى جميع أنحاء المغرب.</p>
+      <div class="f-links">
+        <a href="#about" data-i18n="nav.about">من نحن</a>
+        <a href="#services" data-i18n="nav.services">خدماتنا</a>
+        <a href="#packs" data-i18n="nav.packs">الباقات</a>
+        <a href="#contact" data-i18n="nav.contact">اتصل بنا</a>
+      </div>
+      <div class="f-bottom">© <span id="year">2026</span> Service Logistique — <span data-i18n="footer.rights">جميع الحقوق محفوظة</span> · <span>Rouga Kamal</span></div>
+    </div>
+  </footer>
+
+  <!-- ==================== BOUTON WHATSAPP FLOTTANT ==================== -->
+  <a class="wa-float js-wa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29z"/></svg>
+  </a>
+
+  <script>
+    /* ===== CONFIG : numéro WhatsApp (international, sans +) ===== */
+    const WA_NUMBER = "212638792780";
+
+    /* ===== TRADUCTIONS AR / FR — modifier les textes ici ===== */
+    const I18N = {
+      ar: {
+        "nav.about":"من نحن","nav.services":"خدماتنا","nav.packs":"الباقات",
+        "nav.blog":"المدونة","nav.faq":"الأسئلة الشائعة","nav.contact":"اتصل بنا",
+        "hero.label":"خدمات لوجستية — طنجة، المغرب",
+        "hero.title":"ننقل بضائعك بأمان، وفي الوقت المحدد.",
+        "hero.sub":"نقل، تخزين وتوصيل للشركات والأفراد في طنجة وجميع المدن المغربية — بأسعار واضحة ومتابعة شخصية لكل شحنة.",
+        "hero.cta1":"اطلب عرض سعر مجاني","hero.cta2":"اتصل بنا",
+        "hero.c1":"استجابة سريعة","hero.c2":"أسعار شفافة","hero.c3":"تغطية وطنية",
+        "about.label":"من نحن","about.title":"الجدية والالتزام قبل كل شيء",
+        "about.p1":"Service Logistique مشروع مغربي انطلق من طنجة بهدف واحد: تقديم خدمة لوجستية يمكنك الاعتماد عليها فعلًا — بدون تأخير، بدون مفاجآت في الأسعار، وبتواصل مباشر ومحترم.",
+        "about.t1":"التزام تام بمواعيد التسليم","about.t2":"تعامل آمن وحذر مع بضائعك","about.t3":"عرض سعر واضح قبل أي التزام",
+        "about.cta":"تواصل معنا الآن",
+        "services.label":"خدماتنا","services.title":"كل ما تحتاجه في مكان واحد",
+        "services.sub":"من طرد صغير إلى سلسلة إمداد كاملة.",
+        "services.s1t":"نقل البضائع","services.s1d":"نقل آمن داخل طنجة وإلى جميع المدن المغربية.",
+        "services.s2t":"التخزين","services.s2d":"مساحات آمنة ومنظمة لفترات قصيرة أو طويلة.",
+        "services.s3t":"التوصيل السريع","services.s3d":"توصيل في نفس اليوم داخل طنجة، مع الدفع عند الاستلام.",
+        "services.s4t":"إدارة سلسلة الإمداد","services.s4d":"تنسيق كامل لتدفق بضائعك من المورد إلى العميل.",
+        "services.s5t":"لوجستيك التجارة الإلكترونية","services.s5d":"استلام، تغليف وتوصيل طلبات متجرك الإلكتروني.",
+        "services.s6t":"الشحن بين المدن","services.s6d":"رحلات منتظمة نحو الدار البيضاء، الرباط، فاس ومراكش.",
+        "packs.label":"الباقات","packs.title":"اختر ما يناسبك",
+        "packs.sub":"السعر النهائي يُحدد حسب حجم شحنتك ووجهتها — عرض السعر مجاني.",
+        "packs.hot":"الأكثر طلبًا","packs.cta":"اطلب عرض سعر",
+        "packs.p1n":"باقة الانطلاق","packs.p1f":"للأفراد والطلبات الفردية",
+        "packs.p1i1":"نقل من نقطة إلى نقطة","packs.p1i2":"توصيل داخل طنجة وضواحيها","packs.p1i3":"دفع مرن",
+        "packs.p2n":"باقة الأعمال","packs.p2f":"للمتاجر والشركات الصغيرة",
+        "packs.p2i1":"شحنات منتظمة بجدول أسبوعي","packs.p2i2":"توصيل مع الدفع عند الاستلام","packs.p2i3":"أولوية في الجدولة والرد",
+        "packs.p3n":"باقة مخصصة","packs.p3f":"للشركات ذات الاحتياجات الخاصة",
+        "packs.p3i1":"حل متكامل لسلسلة الإمداد","packs.p3i2":"عقود شهرية أو سنوية","packs.p3i3":"تسعير تفضيلي حسب الحجم",
+        "blog.label":"المدونة","blog.title":"نصائح ومقالات",
+        "blog.b1d":"يوليوز 2026","blog.b1t":"5 معايير لاختيار شريك لوجستي موثوق","blog.b1x":"أسئلة يجب طرحها قبل تسليم بضاعتك لأي جهة…",
+        "blog.b2d":"يونيو 2026","blog.b2t":"كيف يقلل التخزين الذكي تكاليف متجرك؟","blog.b2x":"التخزين المنظم يوفر لك المال والوقت…",
+        "blog.b3d":"ماي 2026","blog.b3t":"طنجة: بوابة لوجستية بين إفريقيا وأوروبا","blog.b3x":"ماذا يعني ميناء طنجة المتوسط لنشاطك التجاري؟…",
+        "faq.label":"الأسئلة الشائعة","faq.title":"أسئلة يطرحها عملاؤنا",
+        "faq.q1":"ما هي المناطق التي تغطونها؟",
+        "faq.a1":"طنجة وضواحيها يوميًا، مع رحلات منتظمة نحو الدار البيضاء، الرباط، فاس، مراكش وأكادير. للوجهات الأخرى راسلنا للتأكيد.",
+        "faq.q2":"كيف أطلب الخدمة؟",
+        "faq.a2":"راسلنا على واتساب بنوع البضاعة وحجمها ووجهتها، ونرسل لك عرض سعر واضحًا. بعد موافقتك نحدد الموعد وننفذ.",
+        "faq.q3":"كم تستغرق عملية التوصيل؟",
+        "faq.a3":"داخل طنجة: نفس اليوم غالبًا. بين المدن: من 24 إلى 72 ساعة حسب الوجهة. المدة الدقيقة تُؤكد في عرض السعر.",
+        "faq.q4":"كيف تُحدد الأسعار؟",
+        "faq.a4":"حسب حجم ووزن البضاعة والمسافة ونوع الخدمة. عرض السعر مجاني وغير ملزم.",
+        "faq.q5":"هل بضاعتي آمنة؟",
+        "faq.a5":"نعم: تغليف مناسب، تحميل حذر، وتخزين آمن — ونبقيك على اطلاع في كل مرحلة. يمكن ترتيب تأمين إضافي للشحنات الثمينة.",
+        "contact.label":"اتصل بنا","contact.title":"لنبدأ العمل معًا",
+        "contact.phone":"الهاتف / واتساب","contact.email":"البريد الإلكتروني",
+        "contact.city":"المدينة","contact.cityV":"طنجة، المغرب",
+        "contact.fT":"أرسل طلبك","contact.fH":"سيُفتح واتساب برسالة جاهزة تحتوي معلوماتك.",
+        "contact.fName":"الاسم الكامل","contact.fPhone":"رقم الهاتف","contact.fService":"الخدمة المطلوبة",
+        "contact.o0":"— اختر —","contact.o1":"نقل البضائع","contact.o2":"التخزين","contact.o3":"التوصيل السريع",
+        "contact.o4":"إدارة سلسلة الإمداد","contact.o5":"خدمة أخرى",
+        "contact.fMsg":"تفاصيل طلبك","contact.send":"إرسال عبر واتساب",
+        "footer.tag":"نقل، تخزين وتوصيل — بجدية والتزام، من طنجة إلى جميع أنحاء المغرب.",
+        "footer.rights":"جميع الحقوق محفوظة",
+        "wa.msg":"مرحبًا، أرغب في الحصول على معلومات حول خدماتكم اللوجستية (نقل / تخزين / توصيل). شكرًا.",
+        "wa.packMsg":"مرحبًا، أرغب في الحصول على عرض سعر خاص بـ: ",
+        "page.title":"Service Logistique — خدمات لوجستية في طنجة"
+      },
+      fr: {
+        "nav.about":"À propos","nav.services":"Services","nav.packs":"Packs",
+        "nav.blog":"Blog","nav.faq":"FAQ","nav.contact":"Contact",
+        "hero.label":"Services logistiques — Tanger, Maroc",
+        "hero.title":"Vos marchandises, livrées en sécurité et à temps.",
+        "hero.sub":"Transport, stockage et livraison pour entreprises et particuliers, à Tanger et dans tout le Maroc — tarifs clairs et suivi personnalisé.",
+        "hero.cta1":"Devis gratuit sur WhatsApp","hero.cta2":"Appelez-nous",
+        "hero.c1":"Réponse rapide","hero.c2":"Tarifs transparents","hero.c3":"Couverture nationale",
+        "about.label":"À propos","about.title":"Le sérieux et l'engagement avant tout",
+        "about.p1":"Service Logistique est un projet marocain né à Tanger avec un seul objectif : offrir un service logistique sur lequel vous pouvez vraiment compter — sans retard, sans surprise de prix, avec un contact direct et respectueux.",
+        "about.t1":"Respect total des délais de livraison","about.t2":"Manipulation soignée de vos marchandises","about.t3":"Devis clair avant tout engagement",
+        "about.cta":"Contactez-nous",
+        "services.label":"Services","services.title":"Tout ce qu'il vous faut, au même endroit",
+        "services.sub":"Du petit colis à la supply chain complète.",
+        "services.s1t":"Transport de marchandises","services.s1d":"Transport sécurisé à Tanger et vers toutes les villes du Maroc.",
+        "services.s2t":"Stockage","services.s2d":"Espaces sûrs et organisés, à court ou long terme.",
+        "services.s3t":"Livraison rapide","services.s3d":"Livraison le jour même à Tanger, avec paiement à la livraison.",
+        "services.s4t":"Gestion supply chain","services.s4d":"Coordination complète du flux, du fournisseur au client.",
+        "services.s5t":"Logistique e-commerce","services.s5d":"Réception, emballage et livraison des commandes de votre boutique.",
+        "services.s6t":"Transport interurbain","services.s6d":"Liaisons régulières vers Casablanca, Rabat, Fès et Marrakech.",
+        "packs.label":"Packs","packs.title":"Choisissez votre formule",
+        "packs.sub":"Le prix final dépend du volume et de la destination — le devis est gratuit.",
+        "packs.hot":"Le plus demandé","packs.cta":"Demander un devis",
+        "packs.p1n":"Pack Démarrage","packs.p1f":"Particuliers et demandes ponctuelles",
+        "packs.p1i1":"Transport de point à point","packs.p1i2":"Livraison à Tanger et environs","packs.p1i3":"Paiement flexible",
+        "packs.p2n":"Pack Business","packs.p2f":"Boutiques et petites entreprises",
+        "packs.p2i1":"Expéditions régulières (hebdo)","packs.p2i2":"Livraison contre remboursement","packs.p2i3":"Priorité de planification",
+        "packs.p3n":"Pack Sur Mesure","packs.p3f":"Entreprises aux besoins spécifiques",
+        "packs.p3i1":"Solution supply chain complète","packs.p3i2":"Contrats mensuels ou annuels","packs.p3i3":"Tarifs préférentiels au volume",
+        "blog.label":"Blog","blog.title":"Conseils et articles",
+        "blog.b1d":"Juillet 2026","blog.b1t":"5 critères pour choisir un partenaire logistique fiable","blog.b1x":"Les questions à poser avant de confier vos marchandises…",
+        "blog.b2d":"Juin 2026","blog.b2t":"Comment un stockage intelligent réduit vos coûts","blog.b2x":"Un stockage organisé vous fait gagner temps et argent…",
+        "blog.b3d":"Mai 2026","blog.b3t":"Tanger : porte logistique entre l'Afrique et l'Europe","blog.b3x":"Ce que le port Tanger Med signifie pour votre activité…",
+        "faq.label":"FAQ","faq.title":"Les questions de nos clients",
+        "faq.q1":"Quelles zones couvrez-vous ?",
+        "faq.a1":"Tanger et ses environs quotidiennement, avec des liaisons régulières vers Casablanca, Rabat, Fès, Marrakech et Agadir. Pour les autres destinations, contactez-nous.",
+        "faq.q2":"Comment commander ?",
+        "faq.a2":"Écrivez-nous sur WhatsApp avec le type de marchandise, le volume et la destination. Nous envoyons un devis clair, puis nous fixons le rendez-vous.",
+        "faq.q3":"Quels sont les délais ?",
+        "faq.a3":"À Tanger : souvent le jour même. Entre les villes : de 24 à 72 h selon la destination. Le délai exact est confirmé dans le devis.",
+        "faq.q4":"Comment sont fixés les prix ?",
+        "faq.a4":"Selon le volume, le poids, la distance et le type de service. Le devis est gratuit et sans engagement.",
+        "faq.q5":"Mes marchandises sont-elles en sécurité ?",
+        "faq.a5":"Oui : emballage adapté, manipulation soignée et stockage sécurisé — vous êtes informé à chaque étape. Une assurance complémentaire est possible pour les marchandises de valeur.",
+        "contact.label":"Contact","contact.title":"Travaillons ensemble",
+        "contact.phone":"Téléphone / WhatsApp","contact.email":"E-mail",
+        "contact.city":"Ville","contact.cityV":"Tanger, Maroc",
+        "contact.fT":"Envoyez votre demande","contact.fH":"WhatsApp s'ouvrira avec un message prérempli.",
+        "contact.fName":"Nom complet","contact.fPhone":"Téléphone","contact.fService":"Service souhaité",
+        "contact.o0":"— Choisir —","contact.o1":"Transport de marchandises","contact.o2":"Stockage","contact.o3":"Livraison rapide",
+        "contact.o4":"Gestion supply chain","contact.o5":"Autre service",
+        "contact.fMsg":"Détails de votre demande","contact.send":"Envoyer via WhatsApp",
+        "footer.tag":"Transport, stockage et livraison — avec sérieux et engagement, de Tanger vers tout le Maroc.",
+        "footer.rights":"Tous droits réservés",
+        "wa.msg":"Bonjour, je souhaite des informations sur vos services logistiques (transport / stockage / livraison). Merci.",
+        "wa.packMsg":"Bonjour, je souhaite un devis pour le : ",
+        "page.title":"Service Logistique — Services logistiques à Tanger"
+      }
+    };
+
+    /* ===== LANGUE (AR <-> FR) ===== */
+    let currentLang = "ar";
+    try { currentLang = localStorage.getItem("sl-lang") || "ar"; } catch(e) {}
+
+    function applyLang(lang){
+      currentLang = lang;
+      const d = I18N[lang];
+      document.documentElement.lang = lang;
+      document.documentElement.dir = (lang === "ar") ? "rtl" : "ltr";
+      document.title = d["page.title"];
+      document.querySelectorAll("[data-i18n]").forEach(el=>{
+        const k = el.getAttribute("data-i18n");
+        if(d[k] !== undefined) el.textContent = d[k];
+      });
+      document.getElementById("langBtn").textContent = (lang === "ar") ? "FR" : "عربي";
+      updateWaLinks();
+      try { localStorage.setItem("sl-lang", lang); } catch(e) {}
+    }
+    function toggleLang(){ applyLang(currentLang === "ar" ? "fr" : "ar"); }
+
+    /* ===== LIENS WHATSAPP ===== */
+    function waUrl(msg){ return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg); }
+    function updateWaLinks(){
+      const d = I18N[currentLang];
+      document.querySelectorAll(".js-wa").forEach(a=>{ a.href = waUrl(d["wa.msg"]); });
+      document.querySelectorAll(".js-wa-pack").forEach(a=>{ a.href = waUrl(d["wa.packMsg"] + a.dataset.pack); });
+    }
+
+    /* ===== FORMULAIRE -> WhatsApp ===== */
+    document.getElementById("contactForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      const n = document.getElementById("fName").value.trim();
+      const p = document.getElementById("fPhone").value.trim();
+      const s = document.getElementById("fService").value;
+      const m = document.getElementById("fMsg").value.trim();
+      let t;
+      if(currentLang === "ar"){
+        t = "مرحبًا، أنا " + n + "\nهاتفي: " + p + (s ? "\nالخدمة: " + s : "") + (m ? "\nالتفاصيل: " + m : "") + "\nأرجو التواصل معي بخصوص عرض سعر. شكرًا.";
+      } else {
+        t = "Bonjour, je suis " + n + "\nTéléphone : " + p + (s ? "\nService : " + s : "") + (m ? "\nDétails : " + m : "") + "\nMerci de me recontacter pour un devis.";
+      }
+      // PIXEL : décommenter si le Meta Pixel est activé
+      // if (typeof fbq === "function") fbq('track', 'Lead');
+      window.open(waUrl(t), "_blank");
+    });
+
+    /* ===== MENU MOBILE ===== */
+    const burger = document.getElementById("burger");
+    const mMenu = document.getElementById("mMenu");
+    function toggleMenu(){ burger.classList.toggle("open"); mMenu.classList.toggle("open"); }
+    mMenu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{ burger.classList.remove("open"); mMenu.classList.remove("open"); }));
+
+    /* ===== HEADER : fond au scroll ===== */
+    function onScroll(){ document.getElementById("header").classList.toggle("solid", window.scrollY > 40); }
+    window.addEventListener("scroll", onScroll); onScroll();
+
+    /* ===== FAQ accordéon ===== */
+    document.querySelectorAll(".faq-q").forEach(btn=>{
+      btn.addEventListener("click", ()=>{
+        const item = btn.parentElement, ans = item.querySelector(".faq-a");
+        const wasOpen = item.classList.contains("open");
+        document.querySelectorAll(".faq-item.open").forEach(o=>{ o.classList.remove("open"); o.querySelector(".faq-a").style.maxHeight = null; });
+        if(!wasOpen){ item.classList.add("open"); ans.style.maxHeight = ans.scrollHeight + "px"; }
+      });
+    });
+
+    /* ===== APPARITION AU SCROLL ===== */
+    if ("IntersectionObserver" in window) {
+      const obs = new IntersectionObserver(es=>{
+        es.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add("visible"); obs.unobserve(en.target); } });
+      }, {threshold:.12});
+      document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+    } else {
+      document.querySelectorAll(".reveal").forEach(el=>el.classList.add("visible"));
+    }
+
+    /* ===== INIT ===== */
+    document.getElementById("year").textContent = new Date().getFullYear();
+    applyLang(currentLang);
+  </script>
+</body>
+</html>
