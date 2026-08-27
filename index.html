@@ -119,7 +119,7 @@
     .logo b{color:#fff}
     .logo em{color:var(--orange);font-style:normal;font-weight:800;letter-spacing:.5px}
     nav.desktop{display:none;gap:24px}
-    nav.desktop a{color:rgba(255,255,255,.85);font-weight:500;font-size:.92rem;transition:color .15s}
+    nav.desktop a{color:rgba(255,255,255,.85);font-weight:500;font-size:.92rem;transition:color .15s;white-space:nowrap}
     nav.desktop a:hover{color:var(--orange)}
     .nav-side{display:flex;align-items:center;gap:10px}
     .lang-btn{
@@ -375,9 +375,9 @@
       </a>
       <nav class="desktop">
         <a href="#about" data-i18n="nav.about">من نحن</a>
-        <a href="#coverage" data-i18n="nav.coverage">التغطية الدولية</a>
-        <a href="#messagerie" data-i18n="nav.messagerie">المراسلة الدولية</a>
-        <a href="#solutions" data-i18n="nav.solutions">الحلول اللوجستية</a>
+        <a href="#coverage" data-i18n="topnav.coverage">التغطية</a>
+        <a href="#messagerie" data-i18n="topnav.messagerie">المراسلة</a>
+        <a href="#solutions" data-i18n="topnav.solutions">الحلول</a>
         <a href="#partenariat" data-i18n="nav.partner">الشراكة</a>
         <a href="#blog" data-i18n="nav.blog">المدونة</a>
         <a href="#faq" data-i18n="nav.faq">الأسئلة الشائعة</a>
@@ -846,6 +846,7 @@
     const I18N = {
       ar: {
         "nav.about":"من نحن","nav.coverage":"التغطية الدولية","nav.messagerie":"المراسلة الدولية","nav.solutions":"الحلول اللوجستية",
+        "topnav.coverage":"التغطية","topnav.messagerie":"المراسلة","topnav.solutions":"الحلول",
         "nav.partner":"الشراكة","nav.blog":"المدونة","nav.faq":"الأسئلة الشائعة","nav.contact":"اتصل بنا",
         "hero.label":"خدمات لوجستية دولية — طنجة، المغرب",
         "hero.title":"جسركم اللوجستي بين القارات",
@@ -927,6 +928,7 @@
       },
       fr: {
         "nav.about":"À propos","nav.coverage":"Couverture internationale","nav.messagerie":"Messagerie Internationale","nav.solutions":"Solutions Logistiques",
+        "topnav.coverage":"Couverture","topnav.messagerie":"Messagerie","topnav.solutions":"Solutions",
         "nav.partner":"Partenariat","nav.blog":"Blog","nav.faq":"FAQ","nav.contact":"Contact",
         "hero.label":"Services logistiques internationaux — Tanger, Maroc",
         "hero.title":"Votre pont logistique entre les continents",
